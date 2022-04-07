@@ -7,9 +7,6 @@
     <h3>Email: sasmth@mail.ru</h3>
   </div>
   
-<p style="white-space: pre-line;">{{ message }}</p>
-<br>
-<textarea v-model="message" placeholder="Add a notice"></textarea>
 </template>
 
 <style>
