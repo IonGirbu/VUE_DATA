@@ -1,73 +1,74 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
 </script>
 
 <template>
-      <div id="mainDiv">
+
+    <div id="mainDiv">
         <div class="list">
             <ul>
-                <li v-for="nr in persons.length" 
-                v-bind:key="nr" 
-                v-bind:id="nr-1" 
-                @click="showInfo">Person {{nr}}</li>
+                <li @click="showInfo" id="0">Platon Anton</li>
+                <li @click="showInfo" id="1">Darie Cristian</li>
+                <li @click="showInfo" id="2">Nosferatu Vladimir</li>
+                <li @click="showInfo" id="3">Parker Peter</li>
+                <li @click="showInfo" id="4">Samurai Jack</li>
             </ul>
         </div>
-        <div id="info" v-show="show"></div>
+        <div id="info">
+
+        </div>
         
     </div>
-
+    
 
 </template>
 
-<script>export default ({
+<script>
+export default ({
     data() {
       return {       
         persons : [
             {
-                name : "Martin",
-                surName : "Garix",
-                age : 22,
-                ocupation : "Beat-maker, Compositor, DJ",
-                email : "dJ_garix@gmail.com"
+                Name : "Anton",
+                Surname : "Platon",
+                Age : 17,
+                Ocupation : "Student in College",
+                Email : "antuankovaliski@gmail.com"
             },
             {
-                name : "Jhony",
-                surName : "Singelton",
-                age : 28,
-                ocupation : "Vocalist, Street Artist",
-                email : "the_three_days_grees_forever@gmail.com"
+                Name : "Cristian",
+                Surname : "Darie",
+                Age : 20,
+                Ocupation : "Freelancer, Student",
+                Email : "Belii0in0MD@gmail.com"
             },
             {
-                name : "Lucy",
-                surName : "Mc-Claren",
-                age : 19,
-                ocupation : "Art-creator, Designer, 2d-Game-maker",
-                email : "littleMagic@gmail.com"
+                Name : "Vladimir",
+                Surname : "Nosferatu",
+                Age : 18,
+                Ocupation : "Dracula, Problem-maker",
+                Email : "alwayshere@gmail.com"
             },
             {
-                name : "MJ",
-                surName : "Brown",
-                age : 26,
-                ocupation : "Programmer, Freelancer",
-                email : "structDC@bord.si"
+                Name : "Peter",
+                Surname : "Parker",
+                Age : 36,
+                Ocupation : "SuperHero, Actor",
+                Email : "Spoodyman@gmail.com"
             },
             {
-                name : "Mike",
-                surName : "Kovalski",
-                age : 999,
-                ocupation : "Scaring Kids",
-                email : "monster_corporation@gmail.com"
+                Name : "Jack",
+                Surname : "Samurai",
+                Age : 56,
+                Ocupation : "Teacher of Martial arts",
+                email : "somethinglikekatana@gmail.com"
             }
-        ],
-        show : false
+        ]
       }  
     },
     methods: {
         showInfo(event){
             let leftDiv = document.getElementById("info");
             leftDiv.innerHTML = "";
-            this.infoApearing();
             for (const key in this.persons) {
                 if (key == event.target.id) {
                     for (const par in this.persons[key]) {
@@ -78,11 +79,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
                     }                  
                 }
             }
-        },
-        
-        infoApearing(){
-            return this.show = true
-        }
+        }    
     },
     computed: {
     
@@ -93,13 +90,6 @@ import HelloWorld from '@/components/HelloWorld.vue'
 <style>
 @import '@/assets/base.css';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
 
 header {
   line-height: 1.5;
@@ -155,11 +145,7 @@ nav a:first-of-type {
     place-items: center;
   }
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+ 
 
   header {
     display: flex;
@@ -177,13 +163,24 @@ nav a:first-of-type {
     margin: 0 2rem 0 0;
   }
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
 }
+
+
+li{
+    list-style: none;
+}
+input{
+    width: 100px;
+}
+#mainDiv{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+#info{
+  margin:60px
+}
+
 </style>
